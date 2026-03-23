@@ -15,7 +15,9 @@ RUN rm -rf /usr/share/nginx/html/*
 RUN mkdir -p  /usr/share/nginx/html
 
 COPY --from=build-stage /app/dist /usr/share/nginx/html
-COPY .well-known /usr/share/nginx/html/.well-known
+
+RUN mkdir -p /usr/share/nginx/html/.well-known/matrix
+RUN echo '{ "m.server": "matrix.guillaumechampeau.com:8448" }' > /usr/share/nginx/html/.well-known/matrix/server
 
 EXPOSE 80
 
