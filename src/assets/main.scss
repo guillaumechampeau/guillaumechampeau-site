@@ -1,0 +1,59 @@
+@import "./base.css";
+@import "./fonts.css";
+@import "./color.scss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    font-family: "Neue Montreal", serif;
+    font-size: 18px;
+}
+
+#app {
+    height: 100%;
+}
+
+.gdc-container {
+    padding-left: 70px;
+    padding-right: 70px;
+}
+
+.absolute-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@layer utilities {
+    @variants responsive {
+        /* Hide scrollbar for Chrome, Safari and Opera */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        /* Hide scrollbar for IE, Edge and Firefox */
+        .no-scrollbar {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+        }
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .gdc-container {
+        padding-left: 6vw;
+        padding-right: 6vw;
+    }
+}
