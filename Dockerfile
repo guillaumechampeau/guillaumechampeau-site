@@ -9,7 +9,7 @@ RUN npm run build
 # production stage
 FROM nginx:alpine as production-stage
 
-COPY ./nginx.conf /etc/nginx/nginx.conf
+COPY ./nginx.conf /etc/nginx/conf.d/default.conf
 
 RUN rm -rf /usr/share/nginx/html/*
 RUN mkdir -p  /usr/share/nginx/html
